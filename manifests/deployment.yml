@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ioutilityrelatorios 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ioutilityrelatorios
+  template:
+    metadata:
+      labels:
+        app: ioutilityrelatorios 
+    spec:
+      containers:
+        - name: ioutilityrelatorios 
+          image: ioutilityimages.azurecr.io/ioutilityrelatorios
+          ports:
+          - containerPort: 80
